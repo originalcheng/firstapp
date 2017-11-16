@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4nz-ic-uXq" userLabel="c.Input_TextField">
+                                <rect key="frame" x="10" y="33" width="305" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lBN-zb-C5N" userLabel="c.Add_Button">
+                                <rect key="frame" x="335" y="33" width="30" height="30"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M7N-2z-m8O"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7Tk-pH-hWd" userLabel="v.Collection">
+                                <rect key="frame" x="0.0" y="71" width="375" height="594"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YeK-GQ-66V">
+                                    <size key="itemSize" width="192" height="122"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TodoCell" id="PT1-cX-VsT" userLabel="v.Display_Cells" customClass="TodoCell">
+                                        <rect key="frame" x="91.5" y="0.0" width="192" height="122"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="192" height="122"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frG-um-1GT" userLabel="v.Display_Text">
+                                                    <rect key="frame" x="10" y="51" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="frG-um-1GT" firstAttribute="leading" secondItem="PT1-cX-VsT" secondAttribute="leading" constant="10" id="kMu-5a-dMc"/>
+                                            <constraint firstItem="frG-um-1GT" firstAttribute="centerY" secondItem="PT1-cX-VsT" secondAttribute="centerY" id="xWX-KF-9RQ"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="todoText" destination="frG-um-1GT" id="PO8-Zx-4WR"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="YO6-cC-ril"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="dEF-5m-KZx"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QL-7A-fDv" userLabel="c.Delete_Button">
+                                <rect key="frame" x="350" y="200" width="46" height="33"/>
+                                <state key="normal" title="Delete"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7Tk-pH-hWd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1CM-Vx-mhU"/>
+                            <constraint firstItem="4QL-7A-fDv" firstAttribute="trailing" secondItem="lBN-zb-C5N" secondAttribute="trailing" id="1n3-he-npP"/>
+                            <constraint firstItem="lBN-zb-C5N" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="13" id="21a-bk-0tE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lBN-zb-C5N" secondAttribute="trailing" constant="10" id="2WP-RT-bEg"/>
+                            <constraint firstItem="lBN-zb-C5N" firstAttribute="height" secondItem="4nz-ic-uXq" secondAttribute="height" id="EBX-Km-h4A"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Tk-pH-hWd" secondAttribute="trailing" id="XF9-rL-EhM"/>
+                            <constraint firstItem="4nz-ic-uXq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="13" id="Yrq-4j-y48"/>
+                            <constraint firstItem="lBN-zb-C5N" firstAttribute="leading" secondItem="4nz-ic-uXq" secondAttribute="trailing" constant="20" id="ZfU-2b-lnR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7Tk-pH-hWd" secondAttribute="bottom" constant="2" id="dll-YL-HuC"/>
+                            <constraint firstItem="7Tk-pH-hWd" firstAttribute="top" secondItem="4nz-ic-uXq" secondAttribute="bottom" constant="8" id="hRN-uk-jhx"/>
+                            <constraint firstItem="4nz-ic-uXq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="kFQ-mu-OEH"/>
+                            <constraint firstItem="4QL-7A-fDv" firstAttribute="top" secondItem="lBN-zb-C5N" secondAttribute="bottom" id="t2E-LZ-smg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="7Tk-pH-hWd" id="RR4-PE-Kbq"/>
+                        <outlet property="todoTextField" destination="4nz-ic-uXq" id="AT8-DX-Blc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="37.600000000000001" y="124.58770614692655"/>
+        </scene>
+    </scenes>
+</document>

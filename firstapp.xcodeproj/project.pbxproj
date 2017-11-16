@@ -16,6 +16,8 @@
 		1FED8A061FB9147700212884 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FED8A051FB9147700212884 /* main.m */; };
 		1FED8A101FB9147700212884 /* firstappTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FED8A0F1FB9147700212884 /* firstappTests.m */; };
 		1FED8A1B1FB9147700212884 /* firstappUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FED8A1A1FB9147700212884 /* firstappUITests.m */; };
+		1FED8A2F1FB922E400212884 /* TodoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FED8A2E1FB922E400212884 /* TodoModel.m */; };
+		1FED8A321FB928C700212884 /* TodoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FED8A311FB928C700212884 /* TodoCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		1FED8A161FB9147700212884 /* firstappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = firstappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FED8A1A1FB9147700212884 /* firstappUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = firstappUITests.m; sourceTree = "<group>"; };
 		1FED8A1C1FB9147700212884 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FED8A2D1FB922E400212884 /* TodoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodoModel.h; sourceTree = "<group>"; };
+		1FED8A2E1FB922E400212884 /* TodoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodoModel.m; sourceTree = "<group>"; };
+		1FED8A301FB928C700212884 /* TodoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodoCell.h; sourceTree = "<group>"; };
+		1FED8A311FB928C700212884 /* TodoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodoCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,13 +109,12 @@
 		1FED89F21FB9147700212884 /* firstapp */ = {
 			isa = PBXGroup;
 			children = (
+				1FED8A2A1FB9223A00212884 /* view */,
+				1FED8A291FB9222A00212884 /* controller */,
+				1FED8A281FB9222000212884 /* model */,
 				1FED89F31FB9147700212884 /* AppDelegate.h */,
 				1FED89F41FB9147700212884 /* AppDelegate.m */,
-				1FED89F61FB9147700212884 /* ViewController.h */,
-				1FED89F71FB9147700212884 /* ViewController.m */,
-				1FED89F91FB9147700212884 /* Main.storyboard */,
 				1FED89FF1FB9147700212884 /* Assets.xcassets */,
-				1FED8A011FB9147700212884 /* LaunchScreen.storyboard */,
 				1FED8A041FB9147700212884 /* Info.plist */,
 				1FED8A051FB9147700212884 /* main.m */,
 				1FED89FC1FB9147700212884 /* firstapp.xcdatamodeld */,
@@ -133,6 +138,35 @@
 				1FED8A1C1FB9147700212884 /* Info.plist */,
 			);
 			path = firstappUITests;
+			sourceTree = "<group>";
+		};
+		1FED8A281FB9222000212884 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				1FED8A2D1FB922E400212884 /* TodoModel.h */,
+				1FED8A2E1FB922E400212884 /* TodoModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		1FED8A291FB9222A00212884 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				1FED89F61FB9147700212884 /* ViewController.h */,
+				1FED89F71FB9147700212884 /* ViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		1FED8A2A1FB9223A00212884 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				1FED89F91FB9147700212884 /* Main.storyboard */,
+				1FED8A011FB9147700212884 /* LaunchScreen.storyboard */,
+				1FED8A301FB928C700212884 /* TodoCell.h */,
+				1FED8A311FB928C700212884 /* TodoCell.m */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +304,8 @@
 			files = (
 				1FED89FE1FB9147700212884 /* firstapp.xcdatamodeld in Sources */,
 				1FED89F81FB9147700212884 /* ViewController.m in Sources */,
+				1FED8A2F1FB922E400212884 /* TodoModel.m in Sources */,
+				1FED8A321FB928C700212884 /* TodoCell.m in Sources */,
 				1FED8A061FB9147700212884 /* main.m in Sources */,
 				1FED89F51FB9147700212884 /* AppDelegate.m in Sources */,
 			);
@@ -435,6 +471,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3BP8C34449;
 				INFOPLIST_FILE = firstapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chenginc.firstapp;
@@ -448,6 +485,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3BP8C34449;
 				INFOPLIST_FILE = firstapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chenginc.firstapp;
