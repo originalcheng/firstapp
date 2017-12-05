@@ -18,12 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4nz-ic-uXq" userLabel="c.Input_TextField">
-                                <rect key="frame" x="10" y="33" width="305" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lBN-zb-C5N" userLabel="c.Add_Button">
                                 <rect key="frame" x="335" y="33" width="30" height="30"/>
                                 <state key="normal" title="Add"/>
@@ -70,10 +64,19 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="dEF-5m-KZx"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QL-7A-fDv" userLabel="c.Delete_Button">
-                                <rect key="frame" x="350" y="200" width="46" height="33"/>
-                                <state key="normal" title="Delete"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QL-7A-fDv" userLabel="c.Reset_Button">
+                                <rect key="frame" x="323" y="61" width="46" height="33"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="klx-J0-n9a"/>
+                                </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4nz-ic-uXq" userLabel="c.Input_TextField">
+                                <rect key="frame" x="16" y="33" width="305" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -94,12 +97,12 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="7Tk-pH-hWd" id="RR4-PE-Kbq"/>
-                        <outlet property="todoTextField" destination="4nz-ic-uXq" id="AT8-DX-Blc"/>
+                        <outlet property="todoTextField" destination="4nz-ic-uXq" id="7rF-uA-2hv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="37.600000000000001" y="124.58770614692655"/>
+            <point key="canvasLocation" x="36" y="123.68815592203899"/>
         </scene>
     </scenes>
 </document>
